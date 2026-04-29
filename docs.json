@@ -1,11 +1,26 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "maple",
   "name": "Anki Smart Notes",
   "colors": {
-    "primary": "#5C6BC0",
-    "light": "#7986CB",
-    "dark": "#3949AB"
+    "primary": "#22C55E",
+    "light": "#4ADE80",
+    "dark": "#16A34A"
+  },
+  "appearance": {
+    "default": "dark"
+  },
+  "background": {
+    "color": {
+      "light": "#FFFFFF",
+      "dark": "#000000"
+    }
+  },
+  "fonts": {
+    "family": "IBM Plex Sans",
+    "heading": {
+      "family": "Fraunces"
+    }
   },
   "favicon": "/favicon.svg",
   "logo": {
@@ -15,10 +30,19 @@
   "navbar": {
     "links": [
       {
+        "label": "Discord",
+        "href": "https://discord.gg/kxGaWpkTGr"
+      },
+      {
         "label": "AnkiWeb",
         "href": "https://ankiweb.net/shared/info/1531888719"
       }
-    ]
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Start Free Trial",
+      "href": "https://smart-notes.xyz?utm_source=docs"
+    }
   },
   "navigation": {
     "tabs": [
@@ -94,7 +118,44 @@
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/piazzatron/anki-smart-notes"
-    }
+      "github": "https://github.com/piazzatron/anki-smart-notes",
+      "discord": "https://discord.gg/kxGaWpkTGr"
+    },
+    "links": [
+      {
+        "header": "Links",
+        "items": [
+          {
+            "label": "Smart Notes Home",
+            "href": "https://smart-notes.xyz"
+          },
+          {
+            "label": "Pricing",
+            "href": "https://smart-notes.xyz/prices"
+          },
+          {
+            "label": "AnkiWeb",
+            "href": "https://ankiweb.net/shared/info/1531888719"
+          }
+        ]
+      },
+      {
+        "header": "Support",
+        "items": [
+          {
+            "label": "Discord",
+            "href": "https://discord.gg/kxGaWpkTGr"
+          },
+          {
+            "label": "Email",
+            "href": "mailto:support@smart-notes.xyz"
+          },
+          {
+            "label": "GitHub Issues",
+            "href": "https://github.com/piazzatron/anki-smart-notes/issues"
+          }
+        ]
+      }
+    ]
   }
 }
