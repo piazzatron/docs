@@ -50,8 +50,40 @@
         "tab": "Docs",
         "groups": [
           {
-            "group": " ",
-            "pages": ["index"]
+            "group": "Get started",
+            "pages": [
+              "index",
+              "quickstart/installation",
+              "quickstart/guide"
+            ]
+          },
+          {
+            "group": "Basics",
+            "pages": [
+              "basics/smart-fields",
+              "basics/generating-notes",
+              "basics/chained-fields"
+            ]
+          },
+          {
+            "group": "Advanced",
+            "pages": [
+              "advanced/text-field-options",
+              "advanced/writing-prompts"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "account/plans-and-pricing"
+            ]
+          },
+          {
+            "group": "Support",
+            "pages": [
+              "support/faq",
+              "support/troubleshooting"
+            ]
           }
         ]
       }

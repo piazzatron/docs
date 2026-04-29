@@ -1,0 +1,41 @@
+---
+title: "Smart Fields"
+description: "Understand how Smart Fields generate text, audio, and images."
+---
+
+A **Smart Field** connects an Anki field to an AI generation rule. When you generate a note, Smart Notes reads the fields already on the note, runs your Smart Field, and writes the result back into the destination field.
+
+## Field types
+
+### Text Smart Fields
+
+Use text fields for translations, definitions, explanations, example sentences, mnemonics, and formatted card content.
+
+### TTS Smart Fields
+
+Use TTS fields to generate audio from an existing field or prompt result.
+
+### Image Smart Fields
+
+Use image fields to generate visual memory aids from your prompt.
+
+## Prompts and field references
+
+Use double curly braces to reference existing Anki fields:
+
+```text
+Create a short example sentence using this word:
+
+{{vocab}}
+```
+
+Smart Notes replaces `{{vocab}}` with the value from the current note before sending the prompt to the model.
+
+## Per-field overrides
+
+Smart Notes has global defaults, but individual Smart Fields can override them. Use overrides when a specific field needs a different model, temperature, web search setting, or output behavior.
+
+## Next steps
+
+- [Generate notes](/basics/generating-notes)
+- [Text field options](/advanced/text-field-options)

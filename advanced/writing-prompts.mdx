@@ -1,0 +1,33 @@
+---
+title: "Writing Prompts"
+description: "Write reliable prompts and avoid common prompt issues."
+---
+
+Most prompts should be short, specific, and constrained. Tell the model what to produce, what source fields to use, and what format to return.
+
+## Prompt shape
+
+```text
+Translate the Japanese word to English.
+Respond only with the English translation.
+
+Word: {{vocab}}
+```
+
+## Make output constraints explicit
+
+Use direct instructions when the destination field expects a specific shape:
+
+- "Respond only with the answer."
+- "Return one sentence."
+- "Do not include explanations."
+- "Use simple HTML tags only."
+
+## Treat field content as user-provided input
+
+If a source field may contain copied text, imported content, or user notes, write prompts that make the model treat that field as content to analyze, not as instructions to follow.
+
+## Next steps
+
+- [Text field options](/advanced/text-field-options)
+- [Chained fields](/basics/chained-fields)

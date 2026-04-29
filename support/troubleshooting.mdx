@@ -1,0 +1,25 @@
+---
+title: "Troubleshooting"
+description: "Fix common setup and generation issues."
+---
+
+## Sign-in problems
+
+If sign-in does not complete, restart Anki and try **Tools → Smart Notes** again.
+
+## Generation does not run
+
+Check that:
+
+- You are signed in.
+- The note type has at least one Smart Field.
+- The Smart Field applies to the deck you are using.
+- The source fields referenced in your prompt exist on the note type.
+
+## Missing or unexpected output
+
+Use **Test** in the Smart Field editor to try the prompt against a note. If the result includes extra text, add a stricter instruction such as "Respond only with the answer."
+
+## Need help?
+
+Ask in [Discord](https://discord.gg/kxGaWpkTGr), email [support@smart-notes.xyz](mailto:support@smart-notes.xyz), or open a [GitHub Issue](https://github.com/piazzatron/anki-smart-notes/issues).
