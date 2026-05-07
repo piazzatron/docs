@@ -3,15 +3,22 @@ title: "Quick Start Guide"
 description: "Create your first Smart Field and generate your first AI-powered card."
 ---
 
-This guide walks you through setting up your first **Smart Field** — a field on your card that AI fills in automatically. We'll use a Japanese vocab card as an example, but the same flow works for any subject.
-
-<Note>
-Make sure you've [installed Smart Notes](/quickstart/installation) and signed in before continuing.
-</Note>
+This guide walks you through setting up your first **Smart Fields** — fields on your card that AI fills in automatically.
 
 ## 1. Create your first text Smart Field
 
-A Smart Field is a Smart Notes prompt attached to a field on a note type. When you generate, AI fills it in.
+We'll pretend we have a simple vocabulary note with three fields (this is just an example - you use Smart Notes to can study anything).
+
+- `vocab`
+- `definition`
+- `example_sentence` — the example sentence Smart Notes will generate
+
+<Tip>
+Unsure how to add or modify fields on your Anki Notes? Use Tools -> Manage Note Types -> Fields within Anki.
+
+See [Anki's official manual](https://docs.ankiweb.net/editing.html#customizing-fields) for more information.
+
+</Tip>
 
 <Steps>
   <Step title="Open the Smart Notes menu">
@@ -19,65 +26,93 @@ A Smart Field is a Smart Notes prompt attached to a field on a note type. When y
   </Step>
   <Step title="Click 'New Text Smart Field'">
     You'll be prompted to choose:
-    - **Note type** — which note type this field belongs to (e.g. *Japanese*).
-    - **Deck scope** — which deck the Smart Field applies to. Pick **All Decks** unless you reuse the same note type across multiple subjects.
-    - **Destination field** — the existing field on the note that AI should fill in (e.g. *Translation*).
+
+    - **Note Type** — Smart Fields are associated with a particular note type.
+    - **Deck** — pick **All Decks** unless you reuse the same note type across multiple subjects.
+    - **Target field** — choose `example_sentence`. This is the field that will be generated.
+
   </Step>
 </Steps>
+
+<Info>
+  Screenshot needed: the new Text Smart Field form with note type, deck scope,
+  and destination field selected.
+</Info>
 
 ## 2. Write your first prompt
 
 The prompt tells the AI what to generate. You can reference any other field on the card with `{{field_name}}` (double curly braces).
 
-For example, if your note type has a `vocab` field with the Japanese word, your translation prompt could be:
-
 ```
-Translate the Japanese word below to English.
-Respond only with the English translation.
+Write a simple sentence in Japanese for the word below.
+Use the provided definition to choose the right meaning.
 
 Word: {{vocab}}
+Definition: {{definition}}
 ```
+
+Smart Notes will directly substitute the values of your card directly into the `{{vocab}}` and `{{definition}}` fields.
 
 Click **Test** to try the prompt against a random note from your deck. When it looks good, click **Save**.
 
 <Tip>
-Adding **"Respond only with..."** keeps the AI from adding extra commentary you don't want on your card.
+  Writing prompts is the scariest part of Smart Notes, but actually it's not
+  scary, and you'll get the hang of it quickly. Learn more about [writing good
+  prompts](/basics/writing-prompts).
 </Tip>
 
-## 3. Generate your first card
+<Info>
+  Screenshot needed: the prompt editor with the example sentence prompt and a
+  successful test result.
+</Info>
 
-Add a card as you normally would. Once you've filled in `vocab`, click the **✨ sparkle button** in the editor (or press <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> on Mac, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> on Windows). Smart Notes fills in your translation field.
+## 3. Generate your first card(s)
 
-## 4. Generate cards in bulk
+Smart Notes provides many ways to generate cards.
 
-Got an existing deck of vocabulary you want to backfill?
+For now, let's try adding a new card via the standard Anki add card flow:
 
-<Steps>
-  <Step title="Open the Anki browser">
-    **Browse → search for the cards you want to generate.**
-  </Step>
-  <Step title="Select cards and generate">
-    Select the cards (Cmd/Ctrl+A to select all), right-click, and choose **Generate Smart Fields**.
-  </Step>
-</Steps>
+- Put the word in `vocab`.
+- Put the definition in `definition`.
+- Leave `example_sentence` empty.
 
-You can also right-click an entire deck in the deck list and select **Generate Smart Fields** to generate everything in that deck at once.
+Then click the **sparkle button** in the editor. Smart Notes fills in the `example_sentence` field.
 
-## 5. Bonus: chain TTS and image fields
+<Tip>
+  You can also use <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> on Mac or{" "}
+  <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> on Windows.
+</Tip>
 
-The real power of Smart Notes is **chaining** — using one Smart Field as input to another.
+Once you're happy with your prompt, you can select multiple cards in the browser, right-click, and choose **Generate Smart Notes**.
 
-Try adding two more Smart Fields to your note type:
+You can also generate individual fields in the editor, or run one-off prompts without saving a permanent Smart Field. Learn more about [how to generate cards](/basics/generating-notes).
 
-- **TTS Smart Field** — set the source to `{{vocab}}` so it reads your Japanese word aloud.
-- **Image Smart Field** — write a prompt like *"A memorable, simple illustration that represents the meaning of: {{translation}}"*. This pulls from the **AI-generated** translation field.
+<Info>
+  Screenshot needed: the Anki editor after Smart Notes fills in
+  `example_sentence`.
+</Info>
 
-Now when you generate a card, Smart Notes figures out the right order automatically: translation first, then the image (which depends on it), then TTS — all in parallel where possible.
+## 4. Add audio and images
+
+Let's add audio and images to the same card. Why not speak our example sentence and generate an image from it?
+
+- **TTS Smart Field** — use `{{example_sentence}}` so Smart Notes reads the generated example sentence aloud.
+- **Image Smart Field** — write a prompt like `A simple memorable image for this example sentence: {{example_sentence}}`.
+
+Both fields reference `{{example_sentence}}`, which is also generated by Smart Notes. This is called **chaining**.
+
+When you generate the card, Smart Notes figures out the right order automatically. It knows it must generate the example sentence first before it can generate the image or TTS audio from that sentence.
+
+## 5. Bonus: make another text field
 
 ## What's next?
 
 <CardGroup cols={2}>
-  <Card title="Smart Fields" icon="wand-magic-sparkles" href="/basics/smart-fields">
+  <Card
+    title="Smart Fields"
+    icon="wand-magic-sparkles"
+    href="/basics/text-field-options"
+  >
     Deep dive on text, TTS, and image fields.
   </Card>
   <Card title="Generating Notes" icon="bolt" href="/basics/generating-notes">

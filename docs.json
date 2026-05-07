@@ -54,36 +54,32 @@
             "pages": [
               "index",
               "quickstart/installation",
-              "quickstart/guide"
+              "quickstart/guide",
+              "basics/generating-notes"
             ]
           },
           {
-            "group": "Basics",
+            "group": "More info",
             "pages": [
-              "basics/smart-fields",
-              "basics/generating-notes",
-              "basics/chained-fields"
+              "basics/text-field-options",
+              "basics/writing-prompts"
             ]
           },
           {
-            "group": "Advanced",
+            "group": "Providers and models",
             "pages": [
-              "advanced/text-field-options",
-              "advanced/writing-prompts"
+              "basics/models",
+              "basics/text-to-speech-voices",
+              "basics/image-providers"
             ]
           },
           {
             "group": "Account",
-            "pages": [
-              "account/plans-and-pricing"
-            ]
+            "pages": ["account/plans-and-pricing"]
           },
           {
             "group": "Support",
-            "pages": [
-              "support/faq",
-              "support/troubleshooting"
-            ]
+            "pages": ["support/faq", "support/troubleshooting"]
           }
         ]
       }
